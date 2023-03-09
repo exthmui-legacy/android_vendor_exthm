@@ -66,7 +66,7 @@ $(TARGET_GENERATED_BOOTANIMATION_DARK): $(SOONG_ZIP)
 	for part_cnt in 0 1 2 3 4; do \
 	    mkdir -p $(INTERMEDIATES_DARK)/part$$part_cnt; \
 	done; \
-	prebuilts/tools-lineage/${HOST_OS}-x86/bin/mogrify -resize $$RESOLUTION -colors 250 $(INTERMEDIATES)/*/*.png; \
+	prebuilts/tools-lineage/${HOST_OS}-x86/bin/mogrify -resize $$RESOLUTION -colors 250 $(INTERMEDIATES_DARK)/*/*.png; \
 	echo "$$IMAGESCALEWIDTH $$IMAGESCALEHEIGHT 60" > $(INTERMEDIATES_DARK)/desc.txt; \
 	cat vendor/exthm/bootanimation/desc_dark.txt >> $(INTERMEDIATES_DARK)/desc.txt
 	$(hide) $(SOONG_ZIP) -L 0 -o $(TARGET_GENERATED_BOOTANIMATION_DARK) -C $(INTERMEDIATES_DARK) -D $(INTERMEDIATES_DARK)
